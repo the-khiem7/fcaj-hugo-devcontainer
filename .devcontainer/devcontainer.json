@@ -46,7 +46,6 @@
       ]
     }
   },
-  "updateContentCommand": "bash -lc 'set -euo pipefail; git submodule update --init --recursive'",
   "postCreateCommand": "hugo version",
   "remoteUser": "vscode"
 }
