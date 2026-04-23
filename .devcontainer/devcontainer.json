@@ -2,11 +2,34 @@
   "name": "Hugo Development",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "username": "vscode"
+    },
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo Live Preview",
+      "onAutoForward": "openBrowser"
+    }
+  },
   "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "content/_index.md",
+        ".devcontainer/devcontainer.json"
+      ]
+    },
     "vscode": {
+      "settings": {
+        "files.exclude": {
+          "**/.hugo_build.lock": true,
+          "**/public": true
+        }
+      },
       "extensions": [
         "budparr.language-hugo-vscode",
         "bungcip.better-toml",
@@ -18,5 +41,6 @@
       ]
     }
   },
-  "postCreateCommand": "curl -L https://github.com/gohugoio/hugo/releases/download/v0.128.0/hugo_0.128.0_linux-amd64.tar.gz | tar -xz && sudo mv hugo /usr/local/bin/hugo"
+  "postCreateCommand": "bash -lc 'set -euo pipefail; HUGO_VERSION=0.134.3; apt-get update; apt-get install -y --no-install-recommends curl ca-certificates tar; ARCH=$(dpkg --print-architecture); case \"$ARCH\" in amd64) HUGO_ARCH=amd64 ;; arm64) HUGO_ARCH=arm64 ;; *) echo \"Unsupported architecture: $ARCH\" >&2; exit 1 ;; esac; curl -fsSL \"https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-${HUGO_ARCH}.tar.gz\" | tar -xz -C /usr/local/bin hugo; git submodule update --init --recursive; hugo version'",
+  "remoteUser": "vscode"
 }
