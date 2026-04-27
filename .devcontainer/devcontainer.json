@@ -1,6 +1,7 @@
 {
   "name": "Hugo Development",
   "build": {
+    "context": "..",
     "dockerfile": "Dockerfile",
     "args": {
       "HUGO_VERSION": "0.134.3"
@@ -36,8 +37,10 @@
         }
       },
       "extensions": [
+        "cweijan.vscode-office",
+        "usernamehw.errorlens",
         "budparr.language-hugo-vscode",
-        "bungcip.better-toml",
+        "tamasfe.even-better-toml",
         "ms-vscode.vscode-markdown-preview",
         "davidanson.vscode-markdownlint",
         "streetsidesoftware.code-spell-checker",
@@ -46,6 +49,6 @@
       ]
     }
   },
-  "postCreateCommand": "hugo version",
+  "postCreateCommand": "bash -lc 'set -euo pipefail; hugo version; python --version; python -c \"import diagrams, PIL, pytesseract, yaml; print(diagrams.__file__)\"; dot -V; magick -version; tesseract --version | head -n 1; cwebp -version; pngquant --version; optipng -version | head -n 1'",
   "remoteUser": "vscode"
 }
