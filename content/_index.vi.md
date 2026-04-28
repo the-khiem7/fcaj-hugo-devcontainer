@@ -1,40 +1,26 @@
 ---
-title: "Báo cáo thực tập"
-date: 2024-01-01
+title: "Mẫu Tài Liệu Hugo"
+date: 2026-04-29
 weight: 1
 chapter: false
 ---
 
-# Báo cáo thực tập
-### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Văn A
+# Mẫu Tài Liệu Hugo
 
-&emsp; **Số điện thoại:** 0989888999
+Sử dụng template này để khởi tạo một website tài liệu Hugo song ngữ, có triển khai GitHub Pages, quy ước tài nguyên theo page bundle, và devcontainer sẵn sàng cho quy trình biên soạn.
 
-&emsp; **Email:** Anguyenvan@gmail.com
+## Template Này Cung Cấp
 
-&emsp; **Trường:** Đại học Sư phạm Kỹ thuật TP.HCM
+- Cấu trúc nội dung tiếng Anh và tiếng Việt
+- Triển khai bằng GitHub Pages Actions
+- Quy ước tài nguyên theo page bundle
+- Lớp tương thích cho nội dung cũ dùng `/images/...`
+- Devcontainer cho Hugo, sơ đồ, ảnh chụp màn hình, OCR, và tối ưu ảnh
 
-&emsp; **Ngành:** Công nghệ thông tin
+## Các Mục Ví Dụ
 
-&emsp; **Lớp:** AWS082025
+{{% children description="true" /%}}
 
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Vietnam
+## Định Hướng Biên Soạn
 
-&emsp; **Vị trí thực tập:** FCJ Cloud Intern
-
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
-
-![Ảnh đại diện của bạn](/images/avatar.png)
-
-
-
-### Nội dung báo cáo
-
-1.  [Worklog](1-Worklog/)
-2.  [Proposal](2-Proposal/)
-3.  [Các bài blogs đã dịch](3-BlogsTranslated/)
-4.  [Các events đã tham gia](4-EventParticipated/)
-5.  [Workshop](5-Workshop/)
-6.  [Tự đánh giá](6-Self-evaluation/)
-7.  [Chia sẻ, đóng góp ý kiến](7-Feedback/)
+Trang mới nên dùng page bundle và đường dẫn Markdown tương đối cho tài nguyên riêng của trang. Tài nguyên static dùng chung vẫn có thể được dùng khi phù hợp, nhưng nội dung mới nên tránh đường dẫn root-relative dạng `/images/...`.

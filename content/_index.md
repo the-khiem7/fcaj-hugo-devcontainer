@@ -1,44 +1,26 @@
 ---
-title: "Internship Report"
-date: 2024-01-01
+title: "Hugo Documentation Template"
+date: 2026-04-29
 weight: 1
 chapter: false
 ---
 
-    
-# Internship Report
+# Hugo Documentation Template
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+Use this template to start a bilingual Hugo documentation site with GitHub Pages deployment, page-bundled assets, and a ready-to-use authoring devcontainer.
 
-### Student Information:
-&emsp; **Full Name:** Nguyen Van A
+## What This Template Provides
 
-&emsp; **Phone Number:** 0989888999 
+- Bilingual English and Vietnamese content structure
+- GitHub Pages Actions deployment
+- Page-bundled asset conventions
+- Legacy `/images/...` compatibility for older content
+- Devcontainer tooling for Hugo, diagrams, screenshots, OCR, and image optimization
 
-&emsp; **Email:** Anguyenvan@gmail.com
+## Example Sections
 
-&emsp; **University:** Ho Chi Minh City University of Technology and Education
+{{% children description="true" /%}}
 
-&emsp; **Major:** Information Technology
+## Authoring Direction
 
-&emsp; **Class:** AWS082025
-
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
-
-&emsp; **Internship Position:** FCJ Cloud Intern
-
-&emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
-
-![Your profile picture](/images/avatar.png)
-
-### Report Content
-
-1.  [Worklog](1-Worklog/)
-2.  [Proposal](2-Proposal/)
-3.  [Translated Blogs](3-BlogsTranslated/)
-4.  [Events Participated](4-EventParticipated/)
-5.  [Workshop](5-Workshop/)
-6.  [Self-evaluation](6-Self-evaluation/)
-7.  [Sharing and Feedback](7-Feedback/)
+New pages should use page bundles and relative Markdown paths for page-specific media. Shared static assets may still be used when appropriate, but new content should avoid root-relative `/images/...` paths.
